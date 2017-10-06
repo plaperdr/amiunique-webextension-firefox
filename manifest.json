@@ -1,0 +1,43 @@
+{
+  "manifest_version": 2,
+  "name": "AmIUnique",
+  "version": "1.0.4",
+  "author": "Pierre Laperdrix",
+  "description": "__MSG_description__",
+  "homepage_url": "https://amiunique.org/",
+  "default_locale": "en",
+  "permissions": [
+    "https://amiunique.org/*",
+    "storage"
+  ],
+  "background": {
+    "page": "background.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://amiunique.org/*"],
+      "js": ["content.js"],
+      "all_frames": true,
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "browser_action": {
+    "default_icon": "icon-16.png",
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "applications": {
+    "gecko": {
+      "id": "@amiunique-extension",
+      "strict_min_version": "51.0"
+    }
+  }
+}
